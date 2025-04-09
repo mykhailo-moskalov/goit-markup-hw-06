@@ -89,7 +89,7 @@ button {
 }
 
 .container {
-  min-width: 320px;
+  max-width: 320px;
   padding: 0 16px;
   margin: 0 auto;
 }
@@ -843,7 +843,7 @@ button {
   }
 
   .container {
-    min-width: 768px;
+    max-width: 768px;
   }
 
   .hero {
@@ -877,7 +877,7 @@ button {
 
 @media screen and (min-width: 1158px) {
   .container {
-    min-width: 1158px;
+    max-width: 1158px;
     padding: 0 15px;
   }
 
