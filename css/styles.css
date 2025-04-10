@@ -114,7 +114,7 @@ button {
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 
   /* HIDE HEADER ON MOBILE VERSION: */
-  @media screen and (min-width: 320px) and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 }
@@ -201,7 +201,6 @@ button {
 .hero {
   padding: 72px 0;
   margin: 0 auto;
-  max-width: 320px;
   background: var(--navy-blue);
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
