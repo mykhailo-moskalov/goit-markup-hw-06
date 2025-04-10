@@ -115,9 +115,9 @@ button {
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 
   /* HIDE HEADER ON MOBILE VERSION: */
-  @media screen and (max-width: 767px) {
+  /* @media screen and (max-width: 767px) {
     display: none;
-  }
+  } */
 }
 
 .header-container {
@@ -149,17 +149,17 @@ button {
 }
 
 .header-nav-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  display: none;
+  /* display: flex;
+  flex-direction: column;
+  gap: 40px; */
 }
 
 .nav-link {
-  padding: 24px 0;
   display: block;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   color: var(--navy-blue);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -175,20 +175,24 @@ button {
 }
 
 .contacts {
-  margin-left: auto;
+  display: none;
   font-style: normal;
 }
 
 .contacts-list {
   display: flex;
-  align-items: center;
-  gap: 40px;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* .contacts-item {} */
 
 .contacts-link {
   display: block;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   color: var(--slate);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -196,6 +200,141 @@ button {
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--ocean);
+}
+
+.menu-open-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+}
+
+.icon-menu {
+  fill: var(--navy-blue);
+}
+
+.mobile-menu {
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-container {
+  position: relative;
+  padding: 72px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu:not(.is-open) .mobile-menu-container {
+  transform: translate(-50%, -100%);
+}
+
+.menu-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-close-icon {
+  fill: var(--navy-blue);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-close-btn:hover .menu-close-icon,
+.menu-close-btn:focus .menu-close-icon {
+  fill: var(--white);
+}
+
+.mobile-menu-nav {
+  width: 151px;
+  height: 200px;
+  margin-bottom: auto;
+}
+
+.header-nav-list.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-menu-address.contacts {
+  display: block;
+}
+
+.mobile-menu-address {
+  width: 193px;
+  height: 72px;
+  margin-bottom: 48px;
+}
+
+.contacts-list.menu {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.menu-social-list {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.menu-social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-social-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--iris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-social-link:hover,
+.menu-social-link:focus {
+  background-color: var(--ocean);
+}
+.member-icon {
+  fill: var(--cloud);
 }
 /* ---------HEADER--------- */
 /* ---------HERO--------- */
@@ -849,8 +988,21 @@ button {
     padding: 24px 0;
   }
 
+  .header-nav-list {
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-link {
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
   .current {
-    color: var(--ocean);
     position: relative;
   }
 
@@ -866,21 +1018,29 @@ button {
   }
 
   .contacts {
+    display: block;
     margin-left: auto;
-    font-style: normal;
   }
 
   .contacts-list {
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-direction: column;
   }
 
   .contacts-link {
+    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
+  }
+
+  .menu-open-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
   }
   /* ---------HEADER--------- */
   /* ---------HERO--------- */
@@ -992,22 +1152,6 @@ button {
   .header-logo {
     margin-right: 76px;
     padding: 24px 0;
-  }
-
-  .current {
-    color: var(--ocean);
-    position: relative;
-  }
-
-  .current::after {
-    content: '';
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    height: 4px;
-    background-color: var(--ocean);
-    border-radius: 2px;
   }
 
   .contacts-list {
