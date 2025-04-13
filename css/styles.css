@@ -345,10 +345,17 @@ button {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-bg.jpg);
+    url(../images/hero-bg/hero-bg-mob.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  @media (min-resolution: 2x) {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg/hero-bg-mob@2x.jpg);
+  }
 }
 
 /* .hero-container {} */
@@ -1046,12 +1053,25 @@ button {
   .hero {
     padding: 112px 0;
     max-width: 768px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg/hero-bg-tab.jpg);
+    @media (min-resolution: 2x) {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero-bg/hero-bg-tab@2x.jpg);
+    }
   }
 
   .hero-title {
     margin-bottom: 36px;
     max-width: 496px;
   }
+
   /* ---------HERO--------- */
   /* ---------FEATURES--------- */
   .features-subtitle {
@@ -1170,11 +1190,24 @@ button {
   .hero {
     padding: 188px 0;
     max-width: 1440px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-bg/hero-bg-des.jpg);
+    @media (min-resolution: 2x) {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero-bg/hero-bg-des@2x.jpg);
+    }
   }
 
   .hero-title {
     margin-bottom: 48px;
   }
+
   /* ---------HERO--------- */
   /* ---------FEATURES--------- */
   .features {
